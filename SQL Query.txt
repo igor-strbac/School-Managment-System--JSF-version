@@ -1,0 +1,53 @@
+insert into korisnici values(null, 'pera', 'pera123', 0);
+insert into administratori values(null, 'Petar', 'Peric', 1);
+
+insert into korisnici values(null, 'janko', 'janko123', 1);
+insert into direktori values(null, 'Janko', 'Jankovic', 2);
+
+insert into korisnici values(null, 'ranko', 'ranko123', 2);
+insert into ucitelji values(null, 'Ranko', 'Rankovic', 3);
+
+insert into korisnici values(null, 'ana', 'antic123', 3);
+insert into roditelji values(null, 'Ana', 'Antic', 4);
+insert into korisnici values(null, 'mika', 'mika123', 3);
+insert into roditelji values(null, 'Mika', 'Mikic', 5);
+
+insert into predmeti values(null, 'Matematika');
+insert into predmeti values(null, 'Srpski');
+insert into predmeti values(null, 'Engleski');
+insert into predmeti values(null, 'Likovno');
+insert into predmeti values(null, 'Fizicko');
+
+insert into dani values(null, 'Ponedeljak');
+insert into dani values(null, 'Utorak');
+insert into dani values(null, 'Sreda');
+insert into dani values(null, 'Cetvrtak');
+insert into dani values(null, 'Petak');
+insert into dani values(null, 'Subota');
+insert into dani values(null, 'Nedelja');
+
+insert into odeljenja values(null, 'I-1', 1, 1);
+
+insert into casovi values(null, 1, 1, 1);
+insert into casovi values(null, 2, 3, 1);
+insert into casovi values(null, 3, 2, 1);
+insert into casovi values(null, 4, 5, 1);
+
+insert into ucenici values(null, 'Marko', 'Markovic', 1, 1);
+insert into ucenici values(null, 'Lazar', 'Lazarevic', 1, 2);
+
+___________SQL QUERY__________
+
+	select * from korisnici;		
+	select * from administratori;	
+	select * from direktori;	
+	select * from ucitelji;			
+	select * from roditelji;		
+	select * from ucenici;		
+	select * from predmeti;			
+	select * from casovi;			
+	select * from dani;				
+	select * from odeljenja;	
+	select * from poruke;	
+    	select * from ocene;	
+

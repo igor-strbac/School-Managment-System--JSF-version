@@ -1,0 +1,21 @@
+body {
+    background-color: black;
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+}
+.kor {
+    position: static;
+    max-width: 1000px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+}
+
+.formaK {
+    padding-left: 350px;
+}
+.formU {
+    padding-left: 350px;
+}
+

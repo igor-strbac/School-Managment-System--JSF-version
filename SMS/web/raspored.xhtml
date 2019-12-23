@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Raspored</title>
+    </h:head>
+    <h:body>
+        <h:form id="kreiranjeRasporeda"> 
+            <h3><h:outputLabel value="KREIRANJE RASPOREDA"/><hr/></h3><br/>
+            <h3><h:outputLabel value="Izaberite odeljenje:"/></h3>
+            <h:panelGrid id = "odeljenje" cellpadding = "10" cellspacing = "1" border="1">
+                    <h:selectOneRadio id="radioO" required="true" requiredMessage="Neophodno je odabrati odeljenje!" value="#{rasporedMB.odeljenje}">
+                        <f:selectItems value="#{departmentMB.departments}" var="o" itemLabel="#{o.ime}" itemValue="#{o.id}"/>
+                    </h:selectOneRadio>
+                </h:panelGrid><br/>
+               
+            <h:dataTable value="#" border="1">
+                <h:column>
+                    <f:facet name="header">Dan</f:facet>
+                    <h:selectOneMenu value="#{rasporedMB.dan}"> 
+                        <f:selectItem itemValue="1" itemLabel="Ponedeljak" />
+                        <f:selectItem itemValue="2" itemLabel="Utorak" />
+                        <f:selectItem itemValue="3" itemLabel="Sreda" />
+                        <f:selectItem itemValue="4" itemLabel="Četvrtak" />      
+                        <f:selectItem itemValue="5" itemLabel="Petak" />
+                    </h:selectOneMenu>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">1</f:facet>
+                    <h:selectOneMenu value="#{rasporedMB.predmet1}"> 
+                        <f:selectItem itemValue="1" itemLabel="Matematika" />
+                        <f:selectItem itemValue="2" itemLabel="Srpski" />
+                        <f:selectItem itemValue="3" itemLabel="Engleski" />
+                        <f:selectItem itemValue="4" itemLabel="Likovno" />      
+                        <f:selectItem itemValue="5" itemLabel="Fizicko" />
+                    </h:selectOneMenu>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">2</f:facet> 
+                    <h:selectOneMenu value="#{rasporedMB.predmet2}"> 
+                        <f:selectItem itemValue="1" itemLabel="Matematika" />
+                        <f:selectItem itemValue="2" itemLabel="Srpski" />
+                        <f:selectItem itemValue="3" itemLabel="Engleski" />
+                        <f:selectItem itemValue="4" itemLabel="Likovno" />      
+                        <f:selectItem itemValue="5" itemLabel="Fizicko" />
+                    </h:selectOneMenu>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">3</f:facet>
+                    <h:selectOneMenu value="#{rasporedMB.predmet3}"> 
+                        <f:selectItem itemValue="1" itemLabel="Matematika" />
+                        <f:selectItem itemValue="2" itemLabel="Srpski" />
+                        <f:selectItem itemValue="3" itemLabel="Engleski" />
+                        <f:selectItem itemValue="4" itemLabel="Likovno" />      
+                        <f:selectItem itemValue="5" itemLabel="Fizicko" />
+                    </h:selectOneMenu>    
+                </h:column>
+                <h:column>
+                    <f:facet name="header">4</f:facet>
+                    <h:selectOneMenu value="#{rasporedMB.predmet4}"> 
+                        <f:selectItem itemValue="1" itemLabel="Matematika" />
+                        <f:selectItem itemValue="2" itemLabel="Srpski" />
+                        <f:selectItem itemValue="3" itemLabel="Engleski" />
+                        <f:selectItem itemValue="4" itemLabel="Likovno" />      
+                        <f:selectItem itemValue="5" itemLabel="Fizicko" />
+                    </h:selectOneMenu>    
+                </h:column>
+                <h:column>
+                    <f:facet name="header">5</f:facet>
+                    <h:selectOneMenu value="#{rasporedMB.predmet5}"> 
+                        <f:selectItem itemValue="1" itemLabel="Matematika" />
+                        <f:selectItem itemValue="2" itemLabel="Srpski" />
+                        <f:selectItem itemValue="3" itemLabel="Engleski" />
+                        <f:selectItem itemValue="4" itemLabel="Likovno" />      
+                        <f:selectItem itemValue="5" itemLabel="Fizicko" />
+                    </h:selectOneMenu>
+                </h:column>
+            </h:dataTable><br/>
+            <h:outputLabel value="#{rasporedMB.poruka}"/><br/><br/>  
+            <h:commandButton value="SNIMI" action="#{rasporedMB.kreirajraspored()}"/>
+        </h:form><br/>
+        
+        <h:form id="brisanjeRasporeda">
+            <h3><h:outputLabel value="BRISANJE RASPOREDA"/></h3><hr/>
+            <h3><h:outputLabel value="Izaberi odeljenje za brisanje rasporeda:"/></h3>
+            <h:panelGrid id = "odeljenje" cellpadding = "10" cellspacing = "1" border="1">
+                    <h:selectOneRadio id="radioO" required="true" requiredMessage="Neophodno je odabrati odeljenje!" value="#{rasporedMB.odeljenje}">
+                        <f:selectItems value="#{departmentMB.departments}" var="o" itemLabel="#{o.ime}" itemValue="#{o.id}"/>
+                    </h:selectOneRadio>
+                </h:panelGrid><br/>
+                <h:commandButton value="BRIŠI" action="#{rasporedMB.brisiRaspored()}"/>
+        </h:form>
+    </h:body>
+</html>
+

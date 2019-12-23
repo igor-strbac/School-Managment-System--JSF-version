@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h2>Lista odeljenja:</h2>
+        <hr/>
+        <h:form>
+            <h:dataTable id= "odeljenjaId" value= "#{directorMB.departments}" var= "odeljenje">
+                <h:column>
+                    <f:facet name="header">Učitelj</f:facet>
+                        #{odeljenje.uciteljiId.ime} #{odeljenje.uciteljiId.prezime}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Odeljenje</f:facet> 
+                        #{odeljenje.ime}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Izmena</f:facet>
+                    <h:commandButton value='Izmeni'/>
+                </h:column>
+            </h:dataTable>
+        </h:form>
+        <h:form>
+            <h2>Lista ocena iz #{ocenee.predmetiId.ime} :</h2>
+            <h:dataTable id= "oceneTabela" value= "#{oceneMB.allOcenePoPredmetuOdeljenju}" var= "ocenee">            
+            <hr/>
+                <h:column>
+                    <f:facet name="header">Odeljenje</f:facet> 
+                        #{ocenee.uceniciId.odeljenjaId.ime}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Ucenik</f:facet> 
+                        #{ocenee.uceniciId.ime} #{ocenee.uceniciId.prezime}  
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Predmet</f:facet>
+                        #{ocenee.predmetiId.ime} 
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Ocene</f:facet>
+                        #{ocenee.ocena}
+                </h:column>              
+            </h:dataTable>
+        </h:form>
+        
+        <h:form>
+            <h2>Lista ocena po predmetu:</h2>
+            <h:dataTable id= "oceneTabela" value= "#{oceneMB.allOcenePoPredmetu}" var= "ocenee">            
+            <hr/>
+                <h:column>
+                    <f:facet name="header">Predmet</f:facet>
+                        #{ocenee.predmetiId.ime} 
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Ocene</f:facet>
+                        #{ocenee.ocena} 
+                </h:column>              
+            </h:dataTable>
+        </h:form>
+            <h:form>
+            <h2>Prosek:</h2>
+            <h:dataTable id= "oceneTabela" value= "#{oceneMB.prosekPoPredmetuOdeljenju}" var=" ocenee">            
+            <hr/>
+                <h:column> 
+                    <f:facet name="header">Po predmetu i odeljenju</f:facet>
+                        #{oceneMB.prosekPoPredmetuOdeljenju} 
+                </h:column>        
+            </h:dataTable>
+        </h:form>
+        <h:form>
+            <h2>Prosek:</h2>
+            <h:dataTable id= "oceneTabela" value= "#{oceneMB.prosekPoPredmetu}" var="o">            
+            <hr/>
+                <h:column> 
+                    <f:facet name="header">Po predmetu</f:facet>
+                        #{oceneMB.prosekPoPredmetu} 
+                </h:column>        
+            </h:dataTable>
+        </h:form>
+    </h:body>
+</html>
+

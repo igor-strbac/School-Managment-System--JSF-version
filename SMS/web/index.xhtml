@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>Elektronski dnevnik - Prijava</title>
+        <h:outputStylesheet library="css" name="index.css"/>
+    </h:head>
+    <h:body>
+        <div class="login">
+            <h2>Elektronski dnevnik - Prijava</h2>
+            <hr/>
+            <h:form class="forma">
+                    <h:panelGrid id = "prijava" columns = "3" cellpadding = "10" cellspacing = "1">
+                        <h:outputLabel value = "Korisničko ime:" />
+                        <h:inputText id="korIme" required="true" p:placeholder="Nalog" requiredMessage="Polje je obavezno!" value="#{loginMB.username}" />
+                        <h:message for="korIme" />
+
+                        <h:outputLabel value = "Lozinka:" />
+                        <h:inputSecret id="lozinka" required="true" p:placeholder="Lozinka" requiredMessage="Polje je obavezno!" value="#{loginMB.password}" />
+                        <h:message for="lozinka" />
+                    </h:panelGrid>
+                
+                    <h:panelGrid id = "korisnik" columns = "5" cellpadding = "10" cellspacing = "1">
+                        <h:selectOneRadio id="radio" required="true" requiredMessage="Prijavljujete se kao?" value="#{loginMB.user}">
+                            <f:selectItem itemLabel="Admin" itemValue="0"/>
+                            <f:selectItem itemLabel="Direktor" itemValue="1"/>
+                            <f:selectItem itemLabel="Učitelj" itemValue="2"/>
+                            <f:selectItem itemLabel="Roditelj" itemValue="3"/>
+                        </h:selectOneRadio>
+                        <h:message for="radio" />
+                    </h:panelGrid>   
+                    <h:outputLabel style="color: red" value="#{loginMB.message}" />
+                    
+                    <h:panelGrid class="dugme">
+                            <f:facet name="footer">
+                                <h:commandButton id = "prijaviSe" value = "Prijavi se" action="#{loginMB.login()}" />    
+                            </f:facet>
+                        </h:panelGrid>
+                </h:form>
+                <h:form>
+                    <h:link value="Registracija" outcome="register"/>
+                </h:form>
+            </div>    
+    </h:body>
+</html>
+
